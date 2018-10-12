@@ -29,6 +29,10 @@ Sortie attendue:
  */
 
 function filterOnPrice(products, maxPrice) {
+  const under500 = products.filter(function(product) {
+    return product.price<=maxPrice ;
+  })
+  return under500;
 }
 
 // Ne pas modifier l'export

@@ -1,6 +1,6 @@
 /* Array.prototype.filter - Exercice 5
 
-Ecrire une fonction searchWordFilter, qui attends deux paramètres:
+Ecrire une fonction searchWordFilter, qui attend deux paramètres:
 1. un tableau de chaînes (par exemple des noms de produits, de films, etc.)
 2. un terme de recherche
 
@@ -38,7 +38,15 @@ Exemple d'entrée:
 
  */
 
-function searchWordFilter(items, search) {
+function searchWordFilter (items, search) {
+  const searchResults = items.filter(function(item) {
+    let capItem = item.toUpperCase();
+    let capSearch = search.toUpperCase();
+    if (capItem.includes(capSearch)) {
+      return item;
+    }
+  });
+  return searchResults;
 }
 
 // Ne pas modifier l'export
